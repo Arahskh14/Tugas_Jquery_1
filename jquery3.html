@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Letakan Kursor ke masing-masing kotak untuk melihat gambar</h2>
+    <div id="div1">
+        Hewan Bebek
+    </div>
+    <div id="div2">
+        Hewan Kucing
+    </div>
+    <div id="div3">
+        Hewan Ayam
+    </div>
+    <audio id="audio-bebek" src="sound/suara-bebek- Hobiburung org.mp3"></audio>
+    <audio id="audio-kucing" src="sound/catsound_v2p5hfv7.mp3"></audio>
+    <audio id="audio-ayam" src="sound/1-Ayam-Keras.mp3"></audio>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Ketika mouse berada di atas gambar atau kotak, maka hewannya bisa bersuara
+            $("#div1").mouseover(function(){
+                $(this).css({
+                    background: "url('https://cdn.linkumkm.id/library/1/0/8/1/7/8/108178_840x576.jpg')"
+                });
+                document.getElementById('audio-bebek').play();
+            });
+            $("div").mouseout(function(){
+                $(this).css({
+                    background: "green"
+                });
+            });
+
+            $("#div2").mouseover(function(){
+                $(this).css({
+                    background: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr6Qs1w91amhfuUT0Wm7BVqH3U3CG82uB3HQ&usqp=CAU')"
+                });
+                document.getElementById('audio-kucing').play();
+            });
+
+            $("#div3").mouseover(function(){
+                $(this).css({
+                    background: "url('https://cdn1-production-images-kly.akamaized.net/roOhb67BcjSIMX8siMQqWKW4ohE=/0x204:1799x1218/800x450/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3195933/original/094731700_1596206149-Ilustrasi_ayam_2.jpg')"
+                });
+                document.getElementById('audio-ayam').play();
+            });
+        });
+    </script>
+</body>
+</html>
